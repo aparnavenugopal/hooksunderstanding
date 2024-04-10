@@ -55,6 +55,46 @@ A.  1.setInterval:
         When called with the interval ID, it stops the interval specified
         by that ID, preventing further execution of the associated function or code snippet.
 
+6.what is an effect or sideeffect in react?
+A. 1.the main job of react is to render UI and react to user inputs.
+   2.evaluate and render jsx manage state and props recat to (user) events
+     and inputs and re evaluate component upon state and prop changes.
+   3.anything other then these are called side effects.
+   4.storing data in browser storage, sending http requests to the backend
+     server,managing timers etc. comes under effects or side effects.
+   5.for sideeffects we use useEffect hook in react functional components.
+
+7.what is useEffect hook?
+A.The useEffect hook is one of the most versatile hooks in React. It allows 
+  you to perform side effects in function components. Side effects may 
+  include data fetching, subscriptions, or manually changing the DOM in React 
+  components. useEffect runs after every render by default and can optionally 
+  clean up after itself.   
+  
+
+  a.Basic syntax:
+
+    useEffect(() => {
+      //side effect code
+      return () => {
+        //cleanup code here(optional)
+      }
+    });
+
+  b.scenarios based on [] in react:
+      1.when there is no [] or dependemncy array:
+          if we dont have dependency array then we get into infinite loop.
+      2.when there is [] present and do not have any depdencies:
+          no changes and hence it only runs once during component mounting.
+      3.where are is[] and dependencies present in it:
+          it will execute only when the conditions or depdencies are met.
+      4.cleanup functions:
+          we use it for clean up functions too like unsubscribe or when componment
+          unmounts all these conditons like 1,2,3 apply there also 
+
+
+
+
 
 
 
