@@ -1,0 +1,60 @@
+1.what is a state?
+A.state of a component is an object that holds some information that may 
+  change over the lifetime of the component.We should always try to make 
+  our state as simple as possible and minimize numberof useful components.
+
+2.explain about useState hook?
+A.useState is a Hook that allows you to add state variables to functional 
+  components in React. Before the introduction of Hooks, state management 
+  was only possible in class components. With Hooks,functional components 
+  can now have their own statewithout converting them into class components.
+    1.useState returns the object which containsthe initial value of the 
+      state and a function used to update the change.It accepts a new 
+      state value and triggers a rerender of the component.
+
+3.explain about useRef?
+A.useRef is a Hook in React that returns a mutable ref object whose 
+  .current property is initialized to the passed argument (initial value).
+  The returned object will persist across renders, allowing us to maintain
+  values between renders without causing re-renders. Additionally, useRef 
+  is commonly used to access or manipulate DOM elements.
+
+  Imagine useRef as a magic wand in React. You can wave this wand to 
+  remember something (like a value or a reference to a DOM element) 
+  without causing the wizard (React) to redraw the whole magical world 
+  (re-render the component).
+
+4.explain the difference between useRef and useState hooks?
+A. 1.useState:
+       a.allows functional components to have their own state.
+       b.allows us to update the state inside component.
+       c.it causes components to rerender after state updates.
+       d.returns the current state.
+   2.useRef:
+       a.returns a object with a property containing the initial value.
+       b.doesnt cause a component to rerender when the value or state changes.
+       c.data is persisted between renders.
+       d.allows dom referencing.
+
+5.explain about setInterval and clearInterval?
+A.  1.setInterval:
+         setInterval is a built-in JavaScript function that repeatedly 
+         calls a function or executes a code snippet at a specified interval 
+         (in milliseconds).
+         It takes two parameters:
+             The function or code snippet to be executed.
+             The interval (in milliseconds) at which the function should 
+             be called.
+             It returns a unique ID (interval ID) that identifies the interval, 
+             which can be used to stop the interval later using clearInterval.
+
+    2.clearInterval:
+        clearInterval is another built-in JavaScript function used to stop 
+        the interval that was previously started with setInterval.
+        It takes one parameter, which is the interval ID returned by setInterval.
+        When called with the interval ID, it stops the interval specified
+        by that ID, preventing further execution of the associated function or code snippet.
+
+
+
+
