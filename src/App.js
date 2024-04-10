@@ -1,5 +1,6 @@
 import './App.css';
 import CategoryBasedFetch from './hooks/CategoryBasedFetch';
+import CleanupUseEffect from './hooks/CleanupUseEffect';
 import DomChangeref from './hooks/DomChangeref';
 import FetchingDataeffectOne from './hooks/FetchingDataeffectOne';
 import UseRef from './hooks/UseRef';
@@ -17,6 +18,7 @@ function App() {
        <DomChangeref/>
        <FetchingDataeffectOne/>
        <CategoryBasedFetch/>
+       {/* <CleanupUseEffect/> */}
     </div>
   );
 }
