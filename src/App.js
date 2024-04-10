@@ -1,4 +1,5 @@
 import './App.css';
+import CategoryBasedFetch from './hooks/CategoryBasedFetch';
 import DomChangeref from './hooks/DomChangeref';
 import FetchingDataeffectOne from './hooks/FetchingDataeffectOne';
 import UseRef from './hooks/UseRef';
@@ -15,6 +16,7 @@ function App() {
        <UseRefTimer/>
        <DomChangeref/>
        <FetchingDataeffectOne/>
+       <CategoryBasedFetch/>
     </div>
   );
 }
