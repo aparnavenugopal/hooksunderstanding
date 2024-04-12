@@ -93,7 +93,37 @@ A.The useEffect hook is one of the most versatile hooks in React. It allows
           unmounts all these conditons like 1,2,3 apply there also 
 
 
+8.what are memoization techniques used in react?
+A.In React, memoization is a technique used to optimize performance by 
+  caching the results of expensive function calls and reusing those results 
+  when the same inputs occur again. This can help prevent unnecessary re-renders 
+  of components and improve overall application efficiency.
+  
+  There are primarily two types of memoization techniques commonly used in React:
 
+      1.Memoization of Components: This involves preventing unnecessary re-renders 
+        of functional components using React's React.memo() higher-order component.
+      2.Memoization of Functions: This involves caching the results of expensive 
+        function calls using techniques such as caching with closures or using 
+        memoization libraries like memoize-one or lodash.memoize.
+
+  Memoization of functions involves caching the results of function calls based 
+  on the arguments passed to them. This technique is useful when you have 
+  expensive computations or calculations that are repeatedly called with the 
+  same inputs.
+
+  Benefits of Memoization in React:
+     1.Improved Performance: Memoization reduces unnecessary computation and r
+       enders, leading to improved performance, especially in complex applications.
+     2.Reduced Re-renders: By memoizing components and functions, React can 
+       avoid unnecessary re-renders and optimize rendering performance.
+     3.Caching Results: Memoization caches the results of expensive computations, 
+       reducing the need to recompute the same values multiple times.
+     4.Simplified Code: Memoization can lead to cleaner and more readable code 
+       by separating concerns and optimizing performance where needed.
+       Overall, memoization is a powerful technique in React for optimizing performance 
+       and improving the user experience, particularly in applications with 
+       frequent rendering and complex computations.
 
 
 

@@ -3,6 +3,7 @@ import CategoryBasedFetch from './hooks/CategoryBasedFetch';
 import CleanupUseEffect from './hooks/CleanupUseEffect';
 import DomChangeref from './hooks/DomChangeref';
 import FetchingDataeffectOne from './hooks/FetchingDataeffectOne';
+import Main from './hooks/Main';
 import UseRef from './hooks/UseRef';
 import UseRefTimer from './hooks/UseRefTimer';
 import UseStatehook from './hooks/UseStatehook';
@@ -19,6 +20,7 @@ function App() {
        <FetchingDataeffectOne/>
        <CategoryBasedFetch/>
        {/* <CleanupUseEffect/> */}
+       <Main/>
     </div>
   );
 }
