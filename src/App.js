@@ -7,6 +7,8 @@ import Main from './hooks/Main';
 import UseRef from './hooks/UseRef';
 import UseRefTimer from './hooks/UseRefTimer';
 import UseStatehook from './hooks/UseStatehook';
+import Parent from './hooks/useCallback/Parent';
+import Imp from './hooks/usememo/Imp';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
        <CategoryBasedFetch/>
        {/* <CleanupUseEffect/> */}
        <Main/>
+       <Imp/>
+       <Parent/>
     </div>
   );
 }

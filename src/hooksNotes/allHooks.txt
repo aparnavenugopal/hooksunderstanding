@@ -126,5 +126,143 @@ A.In React, memoization is a technique used to optimize performance by
        frequent rendering and complex computations.
 
 
+6.explain useMemo hook in detail?
+A.useMemo is a hook provided by React that allows you to memoize the result 
+  of a function call and cache it so that it's only recomputed when its dependencies 
+  change. It's useful for optimizing performance by avoiding unnecessary re-computations 
+  of values that are expensive to calculate.
+
+  const memoizedValue = useMemo(() => computeValue(), [dependency1, dependency2, ...]);
+
+  Parameters:
+     1.computeValue: A function that computes the value you want to memoize.
+     2.dependencies: An array of dependencies. If any of the dependencies change, 
+                     the memoized value will be recalculated. If the dependencies 
+                     remain the same, the memoized value will be reused.
+
+  How useMemo Works:
+     1.Initial Render: When a component renders for the first time, or when 
+                       any of its dependencies change, React calls the function 
+                       passed to useMemo and computes the value.
+     2.Memoization: React memoizes the computed value along with the dependencies.
+     3.Re-render: If the component re-renders and the dependencies remain the 
+                 same, React returns the memoized value without recomputing it.
+     4.Dependency Change: If any of the dependencies change in subsequent 
+                          renders, React re-runs the function passed to useMemo 
+                          and computes a new value, updating the memoized value.
+
+  Use Cases for useMemo:
+    1.Expensive Computations: useMemo is useful for memoizing the results o
+                              of expensive computations or calculations, ensuring 
+                              that they are only recalculated when necessary.
+    2.Preventing Re-renders: By memoizing values derived from props or state, 
+                             useMemo can prevent unnecessary re-renders of components 
+                             when the computed values remain the same.
+    3.Optimizing Performance: Memoizing values with useMemo can lead to p
+                              performance optimizations by reducing the computational 
+                              overhead and avoiding redundant calculations.    
+
+7.what is useCallback hook?
+A. The useCallback hook is used in React to memoize callback functions, preventing 
+   unnecessary re-creation of callbacks on each render. This can be particularly 
+   useful when passing callbacks to child components, as it helps optimize performance 
+   by avoiding unnecessary re-renders of child components.
+
+   const memoizedCallback = useCallback(() => {
+  // Callback function
+   }, [dependency1, dependency2, ...]);
+
+Parameters:
+  1.() => {}: The callback function to be memoized.
+  2.[dependency1, dependency2, ...]: An array of dependencies. If any of the 
+                                     dependencies change, the memoized callback will 
+                                     be recreated. If the dependencies remain the same, the 
+                                     memoized callback will be reused.  
+
+How useCallback Works:
+   1.Initial Render: When a component renders for the first time, or when 
+                     any of its dependencies change, React calls the function passed 
+                     to useCallback and creates a memoized callback.
+   2.Memoization: React memoizes the callback along with the dependencies.
+   3.Re-render: If the component re-renders and the dependencies remain the same, 
+                React returns the memoized callback without recreating it.
+   4.Dependency Change: If any of the dependencies change in subsequent renders, 
+                        React recreates the memoized callback.
+
+Use Cases for useCallback:
+   1.Preventing Re-renders: useCallback is useful for preventing unnecessary 
+                            re-renders of child components when passing callbacks 
+                            as props, especially if the callbacks are created inline in 
+                            the parent component.
+   2.Optimizing Performance: Memoizing callbacks with useCallback can lead to 
+                             performance optimizations by avoiding unnecessary 
+                             re-creations of callbacks on each render.
+
+8.difference between useMemo and useCallback hook?
+A.useMemo:
+    Purpose: useMemo is used to memoize the result of a function call and 
+             cache it so that it's only recomputed when its dependencies change.
+    Usage:
+       1.Useful for memoizing the result of expensive computations or calculations.
+       2.Typically used for optimizing performance by avoiding unnecessary re-computations 
+         of values.
+  
+  useCallback:
+    Purpose: useCallback is used to memoize callback functions, preventing unnecessary 
+             re-creation of callbacks on each render.  
+
+    Usage:
+      1.Useful for preventing unnecessary re-renders of child components when 
+        passing callbacks as props.
+      2.Helps optimize performance by avoiding unnecessary re-creations of 
+        callbacks.
+  
+  Differences:
+     Purpose:
+        1.useMemo: Memoizes the result of a function call.
+        2.useCallback: Memoizes callback functions.
+     Usage:
+        1.useMemo: Used for memoizing the result of expensive computations.
+        2.useCallback: Used for memoizing callback functions, especially when 
+                       passing callbacks as props to child components.
+      Return Value:
+         1.useMemo: Returns the memoized value.
+         2.useCallback: Returns the memoized callback function.
+      Dependencies:
+         Both hooks accept an array of dependencies, and the memoized value or 
+         callback will be recalculated/recreated if any of the dependencies change.
+
+  Important points to note:
+    It's essential to understand that useMemo performs a shallow comparison on the dependencies array. 
+    This means that it only detects changes if the reference to an object or array 
+    changes, not if the object or array's contents change.
+
+    Shallow Comparison:
+      1.Primitive Data Types: For primitive data types like strings, numbers, 
+                              and booleans, useMemo performs a direct comparison, 
+                              checking if the new value is strictly equal (===) to the 
+                              previous value.
+      2.Objects and Arrays: For objects and arrays, useMemo compares the references. 
+                            If the reference to the object or array changes, 
+                            useMemo considers it as a dependency change. However, 
+                            it doesn't perform a deep comparison to check if the contents 
+                            of the object or array have changed.  
+           
+      Like useMemo, useCallback also performs shallow comparisons on its dependencies. 
+      It compares the references of the dependencies rather than the contents 
+      of objects or arrays.
+
+      When you provide dependencies to useCallback, it will memoize the callback 
+      function and recreate it only when any of the dependencies change. However, 
+      it does not perform deep comparisons to detect changes in the contents 
+      of objects or arrays.
+
+      If you need to perform deep comparisons for complex data structures like 
+      objects or arrays, you would need to handle it manually, perhaps by using l
+      ibraries like lodash.isEqual or by ensuring that you update the 
+      reference of the object or array when its contents change.
+
+ 
+                  
 
 
