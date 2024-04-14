@@ -7,13 +7,16 @@ import Main from './hooks/Main';
 import UseRef from './hooks/UseRef';
 import UseRefTimer from './hooks/UseRefTimer';
 import UseStatehook from './hooks/UseStatehook';
+import Login from './hooks/context_api/Login';
+import UserContextProvider from './hooks/context_api/context/UserContextProvider';
+import Mainer from './hooks/contextproject1/Mainer';
 import Parent from './hooks/useCallback/Parent';
 import Imp from './hooks/usememo/Imp';
 
 
 function App() {
   return (
-    <div>
+    <UserContextProvider>
        <p>hello welcome to react</p>
        <UseStatehook/>
        <UseRef/>
@@ -22,10 +25,12 @@ function App() {
        <FetchingDataeffectOne/>
        <CategoryBasedFetch/>
        {/* <CleanupUseEffect/> */}
-       <Main/>
+       {/* <Main/>
        <Imp/>
-       <Parent/>
-    </div>
+       <Parent/> */}
+       <Login/>
+       <Mainer/>
+    </UserContextProvider>
   );
 }
 
