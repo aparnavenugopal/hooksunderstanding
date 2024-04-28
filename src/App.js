@@ -13,6 +13,7 @@ import Mainer from './hooks/contextproject1/Mainer';
 import Parent from './hooks/useCallback/Parent';
 import Imp from './hooks/usememo/Imp';
 import Cookie from './local_storages/Cookie';
+import Sessionstorage from './local_storages/Sessionstorage';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
        {/* <Login/>
        <Mainer/>  */}
        <Cookie/>
+       <Sessionstorage/>
     </UserContextProvider>
   );
 }
