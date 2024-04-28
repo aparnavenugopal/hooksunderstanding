@@ -12,12 +12,13 @@ import UserContextProvider from './hooks/context_api/context/UserContextProvider
 import Mainer from './hooks/contextproject1/Mainer';
 import Parent from './hooks/useCallback/Parent';
 import Imp from './hooks/usememo/Imp';
+import Cookie from './local_storages/Cookie';
 
 
 function App() {
   return (
     <UserContextProvider>
-       <p>hello welcome to react</p>
+       {/* <p>hello welcome to react</p>
        <UseStatehook/>
        <UseRef/>
        <UseRefTimer/>
@@ -28,8 +29,9 @@ function App() {
        {/* <Main/>
        <Imp/>
        <Parent/> */}
-       <Login/>
-       <Mainer/>
+       {/* <Login/>
+       <Mainer/>  */}
+       <Cookie/>
     </UserContextProvider>
   );
 }
